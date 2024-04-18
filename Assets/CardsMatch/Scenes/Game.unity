@@ -1347,6 +1347,7 @@ GameObject:
   - component: {fileID: 1298892621}
   - component: {fileID: 1298892620}
   - component: {fileID: 1298892619}
+  - component: {fileID: 1298892622}
   m_Layer: 5
   m_Name: Panel_Grid
   m_TagString: Untagged
@@ -1432,6 +1433,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1298892617}
   m_CullTransparentMesh: 1
+--- !u!114 &1298892622
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298892617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df14692bc4a71546a023746e0fe9882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding:
+    m_Left: 264
+    m_Right: 0
+    m_Top: 175
+    m_Bottom: 175
+  m_ChildAlignment: 4
+  rows: 4
+  columns: 5
+  cellSize: {x: 182.38681, y: 182.38681}
+  spacing: {x: 50, y: 50}
+  preferredPadding: 100
 --- !u!1 &1445726392
 GameObject:
   m_ObjectHideFlags: 0
