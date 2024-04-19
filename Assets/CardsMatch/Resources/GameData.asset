@@ -12,3 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1ed36f42da2819418d6f91abe6d2aa8, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
+  levelIndex: 3
+  level:
+  - rows: 2
+    columns: 2
+    preferredPaddingTopBottom: 100
+    spacing: {x: 50, y: 50}
+    background: {fileID: 21300000, guid: c394e93ced289a04194990a45a53462d, type: 3}
+  - rows: 2
+    columns: 3
+    preferredPaddingTopBottom: 90
+    spacing: {x: 50, y: 50}
+    background: {fileID: 21300000, guid: c394e93ced289a04194990a45a53462d, type: 3}
+  - rows: 3
+    columns: 4
+    preferredPaddingTopBottom: 70
+    spacing: {x: 40, y: 40}
+    background: {fileID: 21300000, guid: c394e93ced289a04194990a45a53462d, type: 3}
+  cards:
+  - cardName: guava
+    cardImage: {fileID: 21300000, guid: 2a0d5fc709a3cad478d0115d187cb77c, type: 3}
+  - cardName: grapes
+    cardImage: {fileID: 21300000, guid: 84664279396dd0d4ba09ace25b4f0b86, type: 3}
+  - cardName: pine
+    cardImage: {fileID: 21300000, guid: 12037fa8f2357484bab63538959addb7, type: 3}
+  - cardName: melon
+    cardImage: {fileID: 21300000, guid: 0f27fd47ad4543849ae5bd83d92d3a7c, type: 3}
+  - cardName: banana
+    cardImage: {fileID: 21300000, guid: d3d3daaa3b7f773488e4708244cdb8ba, type: 3}
+  - cardName: orange
+    cardImage: {fileID: 21300000, guid: f996907f05e423a4290f6e9093aef768, type: 3}
+  - cardName: lemon
+    cardImage: {fileID: 21300000, guid: 26b76a0336e04134ea52f610856e063e, type: 3}
+  - cardName: pears
+    cardImage: {fileID: 21300000, guid: a984c9c10096cac448d56f61162fae71, type: 3}
+  - cardName: apple
+    cardImage: {fileID: 21300000, guid: 943d4e75d3f78ed44aa6ee1205ed8aa9, type: 3}
+  - cardName: candy
+    cardImage: {fileID: 21300000, guid: 9eacd48ab6fa0234d861af72a11323a9, type: 3}
+  - cardName: icecream
+    cardImage: {fileID: 21300000, guid: 83c399711ecd27e46921b291e3d4a660, type: 3}
+  - cardName: lollipop
+    cardImage: {fileID: 21300000, guid: 73349f857ce54344685062d77fc760cb, type: 3}
+  - cardName: strawberry
+    cardImage: {fileID: 21300000, guid: 18ed5720e7ed118428c501c897803e51, type: 3}
