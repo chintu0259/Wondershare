@@ -26,7 +26,8 @@ public class GameManager : MonoBehaviour
     int matchesCount;
     int scoreCount;
 
-
+    int comboCount=0;
+    int comboMoveCount=0;
     bool isGameOver = false;
    
 
@@ -65,6 +66,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameDatasSO.levelIndex=PlayerPrefs.GetInt(GameDatasSO.LEVELINDEX, 0);
+        comboCount = 0;
+        comboMoveCount = 0;
         isGameOver = false;
         uIManager.Show_Panel_HUD();
 
@@ -92,6 +95,7 @@ public class GameManager : MonoBehaviour
                 gameDatasSO.levelIndex = 0;
             }
             PlayerPrefs.SetInt(GameDatasSO.LEVELINDEX ,gameDatasSO.levelIndex);
+            AudioManager.instance.Play(3);
             StartCoroutine(ShowGameOver());
         }
     }
@@ -140,12 +144,36 @@ public class GameManager : MonoBehaviour
                 TransitionState(matchingCardsState);
                 uIManager.UpdateMatchesText(matchesCount);
                 uIManager.UpdateScoreText(scoreCount);
+
+                if(comboCount==0)
+                {
+                    comboCount++;
+                    comboMoveCount = movesCount + 2;
+                }
+                if (comboCount == 1)
+                {
+                    comboCount=0;
+                    if (movesCount ==comboMoveCount)
+                    {
+                        comboMoveCount = 0;
+                        if (gameDatasSO.levelIndex>0)
+                        {
+                            uIManager.Show_Panel_Combo();
+                        }
+                    }
+                }
+
             }
             else
             {
                 TransitionState(memorizeCardsState);
             }
         }
+    }
+
+    public void PlayComboText()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
 

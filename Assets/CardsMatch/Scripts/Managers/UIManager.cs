@@ -8,6 +8,8 @@ public class UIManager : MonoBehaviour
     public GameObject Panel_HUD;
     public GameObject Panel_GameOver;
 
+    public GameObject Panel_Combo;
+
     public TextMeshProUGUI text_matches;
     public TextMeshProUGUI text_moves;
     public TextMeshProUGUI text_Score;
@@ -15,6 +17,7 @@ public class UIManager : MonoBehaviour
     {
         Panel_HUD.SetActive(false);
         Panel_GameOver.SetActive(false);
+        Panel_Combo.SetActive(false);
 
     }
 
@@ -42,6 +45,19 @@ public class UIManager : MonoBehaviour
     {
 
         text_Score.text = scoreCount.ToString();
+    }
+
+    public void Show_Panel_Combo()
+    {
+        AudioManager.instance.Play(4);
+        Panel_Combo.SetActive(true);
+        StartCoroutine(Hide_Panel_Combo());
+    }
+
+    IEnumerator Hide_Panel_Combo()
+    {
+        yield return new WaitForSeconds(3);
+        Panel_Combo.SetActive(false);
     }
 
 }
