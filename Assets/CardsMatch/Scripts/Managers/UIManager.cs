@@ -10,6 +10,7 @@ public class UIManager : MonoBehaviour
 
     public TextMeshProUGUI text_matches;
     public TextMeshProUGUI text_moves;
+    public TextMeshProUGUI text_Score;
     void TurnOFFAllPanels()
     {
         Panel_HUD.SetActive(false);
@@ -36,6 +37,11 @@ public class UIManager : MonoBehaviour
     public void UpdateMovesText(int movesCount)
     {
         text_moves.text = movesCount.ToString();
+    }
+    public void UpdateScoreText(int scoreCount)
+    {
+
+        text_Score.text = scoreCount.ToString();
     }
 
 }

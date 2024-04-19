@@ -21,7 +21,10 @@ public class GameManager : MonoBehaviour
     public GameObject[] selectedCards;
 
 	int cardCount;
+
 	int movesCount;
+    int matchesCount;
+    int scoreCount;
 
 
     bool isGameOver = false;
@@ -66,6 +69,8 @@ public class GameManager : MonoBehaviour
         uIManager.Show_Panel_HUD();
 
         movesCount = 0;
+        matchesCount=0;
+        scoreCount = PlayerPrefs.GetInt(GameDatasSO.SCORE, 0);
         selectedCards = new GameObject[2];
         selectedCards[0] = null;
         selectedCards[1] = null;
@@ -87,8 +92,14 @@ public class GameManager : MonoBehaviour
                 gameDatasSO.levelIndex = 0;
             }
             PlayerPrefs.SetInt(GameDatasSO.LEVELINDEX ,gameDatasSO.levelIndex);
-            uIManager.Show_Panel_GameOver();
+            StartCoroutine(ShowGameOver());
         }
+    }
+
+    IEnumerator ShowGameOver()
+    {
+        yield return new WaitForSeconds(3);
+        uIManager.Show_Panel_GameOver();
     }
 
     void InitStates()
@@ -123,7 +134,12 @@ public class GameManager : MonoBehaviour
 
             if (MatchSelectedCards())
             {
+                matchesCount++;
+                scoreCount++;
+                PlayerPrefs.SetInt(GameDatasSO.SCORE, scoreCount);
                 TransitionState(matchingCardsState);
+                uIManager.UpdateMatchesText(matchesCount);
+                uIManager.UpdateScoreText(scoreCount);
             }
             else
             {
